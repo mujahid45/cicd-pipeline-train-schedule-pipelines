@@ -5,19 +5,19 @@ pipeline {
 		}
 	}
     stages {
-	    stage('cleaning the workspace') {
-		    steps (
-			   sh "echo ${WORKSPACE}"
-			 }
-			}
+//	    stage('cleaning the workspace') {
+//		    steps (
+//			   sh "echo ${WORKSPACE}"
+//			 }
+//			}
 		
-		stage('cloaning the Repository') {
-		    steps {
-			dir ('WORKSPACE'){
-			   git url: 'https://github.com/linuxacademy/cicd-pipeline-train-schedule-jenkins.git'
-			 }
-			}
+	stage('cloaning the Repository') {
+	    steps {
+		dir ('WORKSPACE'){
+		   git url: 'https://github.com/linuxacademy/cicd-pipeline-train-schedule-jenkins.git'
+		 }
 		}
+	}
         stage('Build') {
             steps {
                 echo 'Running build automation'
