@@ -1,10 +1,12 @@
 pipeline {
-    def branch_workspace = "/var/lib/jenkins/workspace/Train-Test/master/"
+     environment {
+        BRANCH_WORKSPACE = '/var/lib/jenkins/workspace/Train-Test/master/'
+    }
     agent {
 	node {
 	   label 'master'
-	   customWorkspace "${branch_workspace}" 
-		}
+		customWorkspace "${BRANCH_WORKSPACE}" 
+	     }
 	}
     stages {
         stage('Build') {
@@ -16,4 +18,3 @@ pipeline {
         }
     }
 }
-
