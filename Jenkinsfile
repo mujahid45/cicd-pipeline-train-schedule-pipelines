@@ -7,6 +7,11 @@ pipeline {
        }
    }
     stages {
+        stage('cleaning the workspace') {
+	  steps (
+	     sh "rm -rf ${COMMON_WORKSPACE}/*"
+	    }
+	  }
         stage('Build') {
             steps {
                 echo 'Running build automation'
