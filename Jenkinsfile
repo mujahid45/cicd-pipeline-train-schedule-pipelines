@@ -1,4 +1,4 @@
-def COMMON_WORKSPACE = '/var/lib/jenkins/workspace/Train-Test/example-solution/'
+def COMMON_WORKSPACE = '/var/lib/jenkins/workspace/Train-Test/master/'
 pipeline {
     agent {
        node {
@@ -7,11 +7,6 @@ pipeline {
        }
    }
     stages {
-        stage('cleaning the workspace') {
-	  steps {
-	     sh "rm -rf ${COMMON_WORKSPACE}/*"
-	    }
-	  }
         stage('Build') {
             steps {
                 echo 'Running build automation'
