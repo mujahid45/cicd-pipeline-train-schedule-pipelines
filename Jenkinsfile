@@ -1,11 +1,10 @@
 pipeline {
     agent {
-	    node {
-		     label 'master'
-			 customWorkspace '/var/lib/jenkins/workspace/Train-Test/master/'
-			 
-		}
-	}
+       node {
+	  label 'master'
+	  customWorkspace '/var/lib/jenkins/workspace/Train-Test/master/' 
+       }
+   }
     stages {
         stage('Build') {
             steps {
