@@ -1,8 +1,9 @@
 pipeline {
+    branch_workspace="/var/lib/jenkins/workspace/Train-Test/master/"
     agent {
 	    node {
 		     label 'master'
-			 customWorkspace '/var/lib/jenkins/workspace/Train-Test/master/'
+			 customWorkspace  ${branch_workspace}
 			 
 		}
 	}
@@ -16,3 +17,4 @@ pipeline {
         }
     }
 }
+
