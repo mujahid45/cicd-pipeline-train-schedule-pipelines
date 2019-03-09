@@ -3,7 +3,7 @@ pipeline {
     agent {
        node {
 	  label 'master'
-	  customWorkspace ${"COMMON_WORKSPACE"}
+	  customWorkspace "${"COMMON_WORKSPACE"}"
        }
    }
     stages {
