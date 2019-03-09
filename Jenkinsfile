@@ -1,7 +1,7 @@
 pipeline {
     agent {
+	def branch_workspace = "/var/lib/jenkins/workspace/Train-Test/master/"
 	node {
-	   def branch_workspace = "/var/lib/jenkins/workspace/Train-Test/master/"
 	   label 'master'
 	   customWorkspace "${branch_workspace}" 
 		}
