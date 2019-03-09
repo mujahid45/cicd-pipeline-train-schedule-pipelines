@@ -8,7 +8,7 @@ pipeline {
    }
     stages {
         stage('cleaning the workspace') {
-	  steps (
+	  steps {
 	     sh "rm -rf ${COMMON_WORKSPACE}/*"
 	    }
 	  }
