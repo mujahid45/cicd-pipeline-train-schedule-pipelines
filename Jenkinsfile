@@ -3,7 +3,7 @@ pipeline {
     agent {
 	    node {
 		     label 'master'
-			 customWorkspace "${branch_workspace}"
+	             customWorkspace "${branch_workspace}"
 			 
 		}
 	}
