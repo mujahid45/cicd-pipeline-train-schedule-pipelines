@@ -1,8 +1,9 @@
+def COMMON_WORKSPACE = '/var/lib/jenkins/workspace/Train-Test/master/'
 pipeline {
     agent {
        node {
 	  label 'master'
-	  customWorkspace '/var/lib/jenkins/workspace/Train-Test/master/' 
+	  customWorkspace ${"COMMON_WORKSPACE"}
        }
    }
     stages {
