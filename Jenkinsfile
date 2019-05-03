@@ -17,16 +17,16 @@
                }
           }
         stage ('Test 3: Master') {
-          if(DEV == "Pilot") {
-          steps { 
-             echo 'I only execute on the Pilot .' 
-                }
-		  } else {
-          steps { 
-             echo 'I only execute on the Release.' 
-                }		  
-              }
-		  }		    
+          when {
+            expression {
+               DEV == 'Pilotfsdf'
+            }
+          }
+          when { branch 'master' }
+              steps { 
+                echo 'I only execute on the master branch.' 
+                   }
+                 }
         stage ('Test 3: Dev') {
           when { not { branch 'master' } }
               steps {
