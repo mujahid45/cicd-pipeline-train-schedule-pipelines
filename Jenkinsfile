@@ -1,5 +1,10 @@
  pipeline {
     agent any
+	environment {
+      DEV = 'Pilot'
+      UAT = '2'
+      PROD = '3'
+      }
       stages {
         stage('test') {
           steps {
@@ -12,11 +17,15 @@
                }
           }
         stage ('Test 3: Master') {
-          when { branch 'master' }
-              steps { 
-                echo 'I only execute on the master branch.' 
-                   }
-                 }
+          when {
+            expression {
+               DEV == 'Pilot'
+            }
+           }
+          steps { 
+             echo 'I only execute on the master branch.' 
+                }
+              }
         stage ('Test 3: Dev') {
           when { not { branch 'master' } }
               steps {
