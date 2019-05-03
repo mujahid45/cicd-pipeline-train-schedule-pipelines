@@ -26,7 +26,7 @@
              echo 'I only execute on the Release.' 
                 }		  
               }
-		    
+		  }		    
         stage ('Test 3: Dev') {
           when { not { branch 'master' } }
               steps {
