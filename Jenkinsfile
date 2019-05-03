@@ -22,11 +22,10 @@
                DEV == 'Pilotfsdf'
             }
           }
-          when { branch 'master' }
               steps { 
                 echo 'I only execute on the master branch.' 
                    }
-                 }
+            }
         stage ('Test 3: Dev') {
           when { not { branch 'master' } }
               steps {
