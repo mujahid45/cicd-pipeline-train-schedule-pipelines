@@ -25,4 +25,5 @@
                      steps {
                      echo 'I execute on non-master branches.'
               }
-         }          
+         }       
+  }
