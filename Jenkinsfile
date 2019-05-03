@@ -1,7 +1,7 @@
  pipeline {
     agent any
 	environment {
-      DEV = 'Pilofsfddst'
+      DEV = 'Pilot'
       UAT = '2'
       PROD = '3'
       }
@@ -17,15 +17,16 @@
                }
           }
         stage ('Test 3: Master') {
-          when {
-            expression {
-               DEV == 'Pilot'
-            }
-           }
+          if(DEV == "Pilot") {
           steps { 
-             echo 'I only execute on the master branch.' 
+             echo 'I only execute on the Pilot .' 
                 }
+		  } else {
+          steps { 
+             echo 'I only execute on the Release.' 
+                }		  
               }
+		    
         stage ('Test 3: Dev') {
           when { not { branch 'master' } }
               steps {
