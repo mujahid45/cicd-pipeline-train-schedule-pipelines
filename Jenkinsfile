@@ -1,7 +1,7 @@
  pipeline {
     agent any
 	environment {
-      DEV = 'Pilot'
+      DEV = 'Pilotfsfsaf'
       UAT = '2'
       PROD = '3'
       }
